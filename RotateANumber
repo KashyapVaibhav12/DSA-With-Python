@@ -1,0 +1,21 @@
+def lenghtofquotient(quotient):
+    cnt=0
+    while(quotient>0):
+        cnt=cnt+1
+        quotient=quotient//10
+    return cnt
+def rotatenumber(num,n):
+    if(n>0):
+        quotient=num//math.pow(10,n)
+        quotientlen=lenghtofquotient(quotient)
+        rem=(num%math.pow(10,n))*math.pow(10,quotientlen)
+        return int(rem+quotient)
+    elif(n<0):
+        lenght=lenghtofquotient(num)-(abs(n))
+        quotient=(num//math.pow(10,lenght))*(abs(n))
+        rem=num%math.pow(10,lenght)
+        print(rem,quotient)
+num=int(input("Enter the Number : "))
+n=int(input("Enter The Rotation Number: "))
+r=rotatenumber(num,n)
+print(r)
